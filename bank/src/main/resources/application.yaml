@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: bank
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/bank_db
+    username: postgres
+    password: postgres
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
+    show-sql: true
+  liquibase:
+    change-log: classpath:liquibase/db.changelog.yaml
+    enabled: true 
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
